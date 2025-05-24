@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_app_template/src/core/constants/hive_config.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-enum ConfigEnvironments { dev, staging, production }
+enum ConfigEnvironments { staging }
 
 class EnvConfig {
   static const String APP_NAME = 'Flutter App';
