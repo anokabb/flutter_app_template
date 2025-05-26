@@ -5,31 +5,32 @@ import 'package:flutter_app_template/src/core/services/theme/app_colors.dart';
 import 'package:flutter_app_template/src/core/services/theme/app_text_theme_extension.dart';
 import 'package:flutter_app_template/src/core/services/theme/app_typography.dart';
 import 'package:flutter_app_template/src/features/languages/presentation/cubit/language_cubit.dart';
+import 'package:flutter_app_template/src/features/languages/presentation/pages/language_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static String? get fontFamily {
-    final languageCubit = locator<LanguageCubit>();
-    if (languageCubit.state?.languageCode == 'ar') {
-      return GoogleFonts.cairo().fontFamily;
-    }
-    return GoogleFonts.robotoSlab().fontFamily;
+  static String? getFontFamily(String lang) {
+    return lang == LanguageEnum.ar.name ? GoogleFonts.ibmPlexSansArabic().fontFamily : GoogleFonts.inter().fontFamily;
   }
 
   static SimpleAppTextThemeExtension lightTextTheme(String? fontFamily) => SimpleAppTextThemeExtension(
-        h1: AppTypography.h1.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        h2: AppTypography.h2.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        h3: AppTypography.h3.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        h4: AppTypography.h4.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        h5: AppTypography.h5.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        h6: AppTypography.h6.copyWith(color: AppColors.black, fontFamily: fontFamily),
-        title: AppTypography.title.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        title1: AppTypography.title1.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        title2: AppTypography.title2.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        title3: AppTypography.title3.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        title4: AppTypography.title4.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        title5: AppTypography.title5.copyWith(color: AppColors.black, fontFamily: fontFamily),
         subtitle1: AppTypography.subtitle1.copyWith(color: AppColors.black, fontFamily: fontFamily),
         subtitle2: AppTypography.subtitle2.copyWith(color: AppColors.black, fontFamily: fontFamily),
         subtitle3: AppTypography.subtitle3.copyWith(color: AppColors.black, fontFamily: fontFamily),
         body1: AppTypography.body1.copyWith(color: AppColors.black, fontFamily: fontFamily),
         body2: AppTypography.body2.copyWith(color: AppColors.black, fontFamily: fontFamily),
         body3: AppTypography.body3.copyWith(color: AppColors.black, fontFamily: fontFamily),
+        subtitle1Light: AppTypography.subtitle1.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
+        subtitle2Light: AppTypography.subtitle2.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
+        subtitle3Light: AppTypography.subtitle3.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
+        body1Light: AppTypography.body1.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
+        body2Light: AppTypography.body2.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
+        body3Light: AppTypography.body3.copyWith(color: _lightAppColors.lightTextColor, fontFamily: fontFamily),
       );
 
   static ThemeData light(String? fontFamily) {
@@ -49,6 +50,11 @@ class AppTheme {
         color: _lightAppColors.borderColor,
         thickness: 0.7,
         space: 0,
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: _lightAppColors.primary,
+        selectionColor: _lightAppColors.primary.withOpacity(0.2),
+        selectionHandleColor: _lightAppColors.primary,
       ),
       primaryColor: _lightAppColors.primary,
       primaryColorDark: _lightAppColors.secondary,
@@ -108,6 +114,7 @@ class AppTheme {
     onSurface: AppColors.black,
     borderColor: AppColors.darkGrey,
     textColor: AppColors.black,
+    lightTextColor: AppColors.black.withOpacity(0.5),
   );
   // *** Dark theme ***
 
@@ -180,19 +187,23 @@ class AppTheme {
   }
 
   static SimpleAppTextThemeExtension darkTextTheme(String? fontFamily) => SimpleAppTextThemeExtension(
-        h1: AppTypography.h1.copyWith(color: Colors.white, fontFamily: fontFamily),
-        h2: AppTypography.h2.copyWith(color: Colors.white, fontFamily: fontFamily),
-        h3: AppTypography.h3.copyWith(color: Colors.white, fontFamily: fontFamily),
-        h4: AppTypography.h4.copyWith(color: Colors.white, fontFamily: fontFamily),
-        h5: AppTypography.h5.copyWith(color: Colors.white, fontFamily: fontFamily),
-        h6: AppTypography.h6.copyWith(color: Colors.white, fontFamily: fontFamily),
-        title: AppTypography.title.copyWith(color: Colors.white, fontFamily: fontFamily),
+        title1: AppTypography.title1.copyWith(color: Colors.white, fontFamily: fontFamily),
+        title2: AppTypography.title2.copyWith(color: Colors.white, fontFamily: fontFamily),
+        title3: AppTypography.title3.copyWith(color: Colors.white, fontFamily: fontFamily),
+        title4: AppTypography.title4.copyWith(color: Colors.white, fontFamily: fontFamily),
+        title5: AppTypography.title5.copyWith(color: Colors.white, fontFamily: fontFamily),
         subtitle1: AppTypography.subtitle1.copyWith(color: Colors.white, fontFamily: fontFamily),
         subtitle2: AppTypography.subtitle2.copyWith(color: Colors.white, fontFamily: fontFamily),
         subtitle3: AppTypography.subtitle3.copyWith(color: Colors.white, fontFamily: fontFamily),
         body1: AppTypography.body1.copyWith(color: Colors.white, fontFamily: fontFamily),
         body2: AppTypography.body2.copyWith(color: Colors.white, fontFamily: fontFamily),
         body3: AppTypography.body3.copyWith(color: Colors.white, fontFamily: fontFamily),
+        subtitle1Light: AppTypography.subtitle1.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
+        subtitle2Light: AppTypography.subtitle2.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
+        subtitle3Light: AppTypography.subtitle3.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
+        body1Light: AppTypography.body1.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
+        body2Light: AppTypography.body2.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
+        body3Light: AppTypography.body3.copyWith(color: _darkAppColors.lightTextColor, fontFamily: fontFamily),
       );
 
   static final _darkAppColors = AppColorsExtension(
@@ -209,6 +220,7 @@ class AppTheme {
     onSurface: Colors.white,
     borderColor: Color.fromRGBO(71, 71, 73, 1),
     textColor: Colors.white,
+    lightTextColor: AppColors.black.withOpacity(0.5),
   );
 }
 
@@ -216,7 +228,9 @@ extension AppThemeExtension on ThemeData {
   AppColorsExtension get appColors => extension<AppColorsExtension>() ?? AppTheme._lightAppColors;
 
   SimpleAppTextThemeExtension get appTextTheme =>
-      extension<SimpleAppTextThemeExtension>() ?? AppTheme.lightTextTheme(AppTheme.fontFamily);
+      extension<SimpleAppTextThemeExtension>() ??
+      AppTheme.lightTextTheme(
+          AppTheme.getFontFamily(locator<LanguageCubit>().state?.languageCode ?? DEFAULT_LANGUAGE.name));
 }
 
 /// A more convenient way to get `ThemeData` from the `BuildContext`.
@@ -224,4 +238,6 @@ extension AppThemeExtension on ThemeData {
 /// Usage example: `context.theme`.
 extension ThemeGetter on BuildContext {
   ThemeData get theme => Theme.of(this);
+  SimpleAppTextThemeExtension get appTextTheme => Theme.of(this).appTextTheme;
+  AppColorsExtension get appColors => Theme.of(this).appColors;
 }

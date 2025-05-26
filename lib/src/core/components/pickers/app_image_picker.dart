@@ -73,7 +73,7 @@ class AppImagePicker extends StatefulWidget {
                             // const SizedBox(height: 10),
                             Text(
                               context.localization.takePhoto,
-                              style: context.theme.appTextTheme.title,
+                              style: context.theme.appTextTheme.title4,
                             ),
                           ],
                         ),
@@ -108,7 +108,7 @@ class AppImagePicker extends StatefulWidget {
                             // const SizedBox(height: 10),
                             Text(
                               context.localization.fromGallery,
-                              style: context.theme.appTextTheme.title,
+                              style: context.theme.appTextTheme.title4,
                             ),
                           ],
                         ),

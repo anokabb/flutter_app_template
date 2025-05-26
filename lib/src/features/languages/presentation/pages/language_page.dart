@@ -7,9 +7,14 @@ import 'package:flutter_app_template/src/features/languages/presentation/cubit/l
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+enum LanguageEnum {
+  ar,
+  en,
+}
+
 List<(String, String)> languages = [
-  ('العربية', 'ar'),
-  ('english', 'en'),
+  ('العربية', LanguageEnum.ar.name),
+  ('English', LanguageEnum.en.name),
 ];
 
 class LanguagePage extends StatefulWidget {

@@ -15,6 +15,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.onSurface,
     required this.borderColor,
     required this.textColor,
+    required this.lightTextColor,
   });
 
   final Color primary;
@@ -30,6 +31,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color onSurface;
   final Color borderColor;
   final Color textColor;
+  final Color lightTextColor;
 
 
   @override
@@ -48,6 +50,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? borderColor,
     Color? grainColor,
     Color? textColor,
+    Color? lightTextColor,
   }) {
     return AppColorsExtension(
       primary: primary ?? this.primary,
@@ -63,6 +66,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       onSurface: onSurface ?? this.onSurface,
       borderColor: borderColor ?? this.borderColor,
       textColor: textColor ?? this.textColor,
+      lightTextColor: lightTextColor ?? this.lightTextColor,
     );
   }
 
@@ -89,6 +93,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       onSurface: Color.lerp(onSurface, other.onSurface, t)!,
       borderColor: Color.lerp(borderColor, other.borderColor, t)!,
       textColor: Color.lerp(textColor, other.textColor, t)!,
+      lightTextColor: Color.lerp(lightTextColor, other.lightTextColor, t)!,
     );
   }
 }

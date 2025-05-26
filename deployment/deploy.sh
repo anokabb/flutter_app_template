@@ -224,6 +224,14 @@ fi
 update_pubspec_version "$BUILD_NUMBER"
 
 # ----------------------------------------
+# Flutter setup
+# ----------------------------------------
+log INFO "Running flutter clean & pub get"
+cd "$PROJECT_ROOT" # Ensure we are in the project root
+fvm flutter clean
+fvm flutter pub get
+
+# ----------------------------------------
 # Deploy 🎉
 # ----------------------------------------
 # Deploy to filtered platforms

@@ -134,7 +134,7 @@ class AppPopUp extends StatelessWidget {
                         Text(
                           title,
                           textAlign: TextAlign.center,
-                          style: context.theme.appTextTheme.title,
+                          style: context.theme.appTextTheme.title4,
                         ),
                         if (description != null) const SizedBox(height: 8),
                         if (description != null)

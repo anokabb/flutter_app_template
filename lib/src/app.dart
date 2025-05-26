@@ -13,7 +13,6 @@ import 'package:flutter_app_template/src/features/languages/presentation/cubit/l
 import 'package:flutter_app_template/src/features/theme/presentation/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:upgrader/upgrader.dart';
 
 class App extends StatelessWidget {
@@ -36,10 +35,7 @@ class App extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 title: EnvConfig.APP_NAME,
                 theme: AppTheme.light(
-                  locale?.languageCode == 'ar' ? GoogleFonts.cairo().fontFamily : GoogleFonts.poppins().fontFamily,
-                ),
-                darkTheme: AppTheme.dark(
-                  locale?.languageCode == 'ar' ? GoogleFonts.cairo().fontFamily : GoogleFonts.poppins().fontFamily,
+                  AppTheme.getFontFamily(locale?.languageCode ?? DEFAULT_LANGUAGE.name),
                 ),
                 themeMode: themeState.themeMode,
                 routerConfig: routerConfig,

@@ -22,12 +22,6 @@ deploy_platform() {
 
   cd "$PROJECT_ROOT"
 
-  # ------------------------------------------------------
-  # Flutter setup
-  # ------------------------------------------------------
-  log INFO "Running flutter clean & pub get"
-  fvm flutter clean
-  fvm flutter pub get
 
   # ------------------------------------------------------
   # Build
