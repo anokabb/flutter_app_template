@@ -18,13 +18,17 @@ show_mac_notification() {
     return 0
   fi
 
-  terminal-notifier \
-      -title "🚀 $app_name" \
-      -message "✅ Deployed to $platform" \
-      -open "$session_url" \
-      -sound default \
-      -activate "com.apple.Terminal" \
-      -ignoreDnD
+  local notifier_args=()
+  notifier_args+=(-title "🚀 $app_name")
+  notifier_args+=(-message "✅ Deployed to $platform")
+  if [[ -n "$session_url" ]]; then
+    notifier_args+=(-open "$session_url")
+  fi
+  notifier_args+=(-sound default)
+  notifier_args+=(-activate "com.apple.Terminal")
+  notifier_args+=(-ignoreDnD)
+
+  terminal-notifier "${notifier_args[@]}"
 }
 
 return 0 
