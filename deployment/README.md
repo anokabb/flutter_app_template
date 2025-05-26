@@ -55,41 +55,75 @@ Your project should also have `ios/fastlane/` and `android/fastlane/` directorie
 ## 2. Quick-start
 
 ```bash
-# 1) Copy the deployment toolkit to your project's root
-#    (Assumes this 'deployment' folder is not yet in your project)
+# ═══════════════════════════════════════════════════════════════════════════
+# 1. Copy the deployment toolkit
+# ═══════════════════════════════════════════════════════════════════════════
+# First, copy this 'deployment' folder to your project's root directory
+# (Skip this step if the 'deployment' folder is already in your project)
 
-# 2) Navigate into the deployment directory within your project
-#    All subsequent setup commands assume you are in this directory unless specified otherwise.
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 2. Navigate to deployment directory
+# ═══════════════════════════════════════════════════════════════════════════
 cd deployment
 
-# 3) Set up Fastlane in your project
-#    Copy the example Fastlane setups:
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 3. Set up Fastlane configurations
+# ═══════════════════════════════════════════════════════════════════════════
+# Copy the example Fastlane configurations to your iOS and Android directories
 cp -R examples/ios/ ../ios/
 cp -R examples/android/ ../android/
 
 
-# 4) Configure secrets for the deployment toolkit
-#    (Still in <YOUR_PROJECT>/deployment/)
+# ═══════════════════════════════════════════════════════════════════════════
+# 4. Configure deployment secrets
+# ═══════════════════════════════════════════════════════════════════════════
+# Create your deploy.env file from the example template
 cp deploy.env.example deploy.env
-vim deploy.env   # Or any editor – fill in your secrets
 
-# 5) Install Fastlane dependencies for each platform
+# Edit deploy.env to add your secrets and configurations
+vim deploy.env     # Or use any editor of your choice
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 5. Install Fastlane dependencies
+# ═══════════════════════════════════════════════════════════════════════════
+# Install dependencies for iOS
 cd ../ios && bundle install && cd ../deployment
-cd ../android && bundle install && cd ../deployment
-#    (The 'cd ../deployment' returns you here for convenience if needed)
 
-# 6) Ship! (Run from your project root: <YOUR_PROJECT>/)
+# Install dependencies for Android
+cd ../android && bundle install && cd ../deployment
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 6. Ready to deploy! 🚀
+# ═══════════════════════════════════════════════════════════════════════════
+# Return to your project root
 cd ..
-#    Example: Deploy Android to Google Play
+
+# Deploy examples:
+
+# Deploy to Android (Google Play)
 ./deployment/deploy.sh -p android
 
-# More examples (run from <YOUR_PROJECT>/ root):
-# ./deployment/deploy.sh -p ios
-# ./deployment/deploy.sh -p huawei # (if HUAWEI_ENABLED="true")
-# ./deployment/deploy.sh -p android,ios
-# ./deployment/deploy.sh -p all
-# ./deployment/deploy.sh -p android -n 42
-# DEBUG=true ./deployment/deploy.sh -p android
+# Deploy to iOS (TestFlight)
+./deployment/deploy.sh -p ios
+
+# Deploy to Huawei AppGallery (if HUAWEI_ENABLED="true")
+./deployment/deploy.sh -p huawei
+
+# Deploy to multiple platforms at once
+./deployment/deploy.sh -p android,ios
+
+# Deploy to all configured platforms
+./deployment/deploy.sh -p all
+
+# Deploy with a specific build number
+./deployment/deploy.sh -p android -n 42
+
+# Deploy in debug mode (skips git checks and notifications)
+DEBUG=true ./deployment/deploy.sh -p android
 ```
 
 ### 🆕 Key Features
