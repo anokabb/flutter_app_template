@@ -72,7 +72,6 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
-    - assets/gif/
     - staging.env
 
 flutter_gen:
