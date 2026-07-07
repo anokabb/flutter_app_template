@@ -57,19 +57,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordsDoNotMatch => 'Passwords do not match';
 
   @override
-  String get passwordMustBeAtLeast8Characters => 'Password must be at least 8 characters';
+  String get passwordMustBeAtLeast8Characters =>
+      'Password must be at least 8 characters';
 
   @override
-  String get passwordMustContainAtLeastOneUppercaseLetter => 'Password must contain at least one uppercase letter';
+  String get passwordMustContainAtLeastOneUppercaseLetter =>
+      'Password must contain at least one uppercase letter';
 
   @override
-  String get passwordMustContainAtLeastOneLowercaseLetter => 'Password must contain at least one lowercase letter';
+  String get passwordMustContainAtLeastOneLowercaseLetter =>
+      'Password must contain at least one lowercase letter';
 
   @override
-  String get passwordMustContainAtLeastOneNumberOrSpecialCharacter => 'Password must contain at least one number or special character';
+  String get passwordMustContainAtLeastOneNumberOrSpecialCharacter =>
+      'Password must contain at least one number or special character';
 
   @override
-  String get pleaseEnterAValidCellphoneNumber => 'Please enter a valid cellphone number';
+  String get pleaseEnterAValidCellphoneNumber =>
+      'Please enter a valid cellphone number';
 
   @override
   String get pleaseEnterAValidNumber => 'Please enter a valid number';
@@ -102,7 +107,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pageNotFound => 'Page Not Found';
 
   @override
-  String get thePageYouAreLookingForDoesNotExist => 'The page you are looking for does not exist';
+  String get thePageYouAreLookingForDoesNotExist =>
+      'The page you are looking for does not exist';
 
   @override
   String get emailAddress => 'Email address';
@@ -141,7 +147,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterNewPassword => 'Enter New Password';
 
   @override
-  String get pleaseEnterTheVerificationCode => 'Please enter the verification code';
+  String get pleaseEnterTheVerificationCode =>
+      'Please enter the verification code';
 
   @override
   String get pleaseEnterAValidOtp => 'Please enter a valid OTP';

@@ -21,6 +21,7 @@ ApiResponse<T> _$ApiResponseFromJson<T>(
 
 /// @nodoc
 mixin _$ApiResponse<T> {
+  @StringConverter()
   String? get message => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
   dynamic get meta => throw _privateConstructorUsedError;
@@ -42,7 +43,7 @@ abstract class $ApiResponseCopyWith<T, $Res> {
           ApiResponse<T> value, $Res Function(ApiResponse<T>) then) =
       _$ApiResponseCopyWithImpl<T, $Res, ApiResponse<T>>;
   @useResult
-  $Res call({String? message, T? data, dynamic meta});
+  $Res call({@StringConverter() String? message, T? data, dynamic meta});
 }
 
 /// @nodoc
@@ -89,7 +90,7 @@ abstract class _$$ApiResponseImplCopyWith<T, $Res>
       __$$ApiResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({String? message, T? data, dynamic meta});
+  $Res call({@StringConverter() String? message, T? data, dynamic meta});
 }
 
 /// @nodoc
@@ -129,13 +130,15 @@ class __$$ApiResponseImplCopyWithImpl<T, $Res>
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
 class _$ApiResponseImpl<T> implements _ApiResponse<T> {
-  const _$ApiResponseImpl({this.message, this.data, this.meta});
+  const _$ApiResponseImpl(
+      {@StringConverter() this.message, this.data, this.meta});
 
   factory _$ApiResponseImpl.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$$ApiResponseImplFromJson(json, fromJsonT);
 
   @override
+  @StringConverter()
   final String? message;
   @override
   final T? data;
@@ -182,7 +185,7 @@ class _$ApiResponseImpl<T> implements _ApiResponse<T> {
 
 abstract class _ApiResponse<T> implements ApiResponse<T> {
   const factory _ApiResponse(
-      {final String? message,
+      {@StringConverter() final String? message,
       final T? data,
       final dynamic meta}) = _$ApiResponseImpl<T>;
 
@@ -191,6 +194,7 @@ abstract class _ApiResponse<T> implements ApiResponse<T> {
       _$ApiResponseImpl<T>.fromJson;
 
   @override
+  @StringConverter()
   String? get message;
   @override
   T? get data;

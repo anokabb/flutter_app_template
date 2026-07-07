@@ -57,16 +57,20 @@ class AppLocalizationsAr extends AppLocalizations {
   String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
 
   @override
-  String get passwordMustBeAtLeast8Characters => 'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل';
+  String get passwordMustBeAtLeast8Characters =>
+      'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل';
 
   @override
-  String get passwordMustContainAtLeastOneUppercaseLetter => 'يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل';
+  String get passwordMustContainAtLeastOneUppercaseLetter =>
+      'يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل';
 
   @override
-  String get passwordMustContainAtLeastOneLowercaseLetter => 'يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل';
+  String get passwordMustContainAtLeastOneLowercaseLetter =>
+      'يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل';
 
   @override
-  String get passwordMustContainAtLeastOneNumberOrSpecialCharacter => 'يجب أن تحتوي كلمة المرور على رقم أو رمز خاص واحد على الأقل';
+  String get passwordMustContainAtLeastOneNumberOrSpecialCharacter =>
+      'يجب أن تحتوي كلمة المرور على رقم أو رمز خاص واحد على الأقل';
 
   @override
   String get pleaseEnterAValidCellphoneNumber => 'الرجاء إدخال رقم هاتف صحيح';
@@ -102,7 +106,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pageNotFound => 'الصفحة غير موجودة';
 
   @override
-  String get thePageYouAreLookingForDoesNotExist => 'الصفحة التي تبحث عنها غير موجودة';
+  String get thePageYouAreLookingForDoesNotExist =>
+      'الصفحة التي تبحث عنها غير موجودة';
 
   @override
   String get emailAddress => 'البريد الإلكتروني';
@@ -141,7 +146,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterNewPassword => 'أدخل كلمة المرور الجديدة';
 
   @override
-  String get pleaseEnterTheVerificationCode => 'Please enter the verification code';
+  String get pleaseEnterTheVerificationCode =>
+      'Please enter the verification code';
 
   @override
   String get pleaseEnterAValidOtp => 'Please enter a valid OTP';

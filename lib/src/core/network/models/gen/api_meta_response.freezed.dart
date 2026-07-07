@@ -20,10 +20,15 @@ ApiMetaResponse _$ApiMetaResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ApiMetaResponse {
+  @IntConverter()
   int? get perPage => throw _privateConstructorUsedError;
+  @IntConverter()
   int? get currentPage => throw _privateConstructorUsedError;
+  @StringConverter()
   String? get path => throw _privateConstructorUsedError;
+  @IntConverter()
   int? get total => throw _privateConstructorUsedError;
+  @IntConverter()
   int? get lastPage => throw _privateConstructorUsedError;
 
   /// Serializes this ApiMetaResponse to a JSON map.
@@ -43,11 +48,11 @@ abstract class $ApiMetaResponseCopyWith<$Res> {
       _$ApiMetaResponseCopyWithImpl<$Res, ApiMetaResponse>;
   @useResult
   $Res call(
-      {int? perPage,
-      int? currentPage,
-      String? path,
-      int? total,
-      int? lastPage});
+      {@IntConverter() int? perPage,
+      @IntConverter() int? currentPage,
+      @StringConverter() String? path,
+      @IntConverter() int? total,
+      @IntConverter() int? lastPage});
 }
 
 /// @nodoc
@@ -105,11 +110,11 @@ abstract class _$$ApiMetaResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? perPage,
-      int? currentPage,
-      String? path,
-      int? total,
-      int? lastPage});
+      {@IntConverter() int? perPage,
+      @IntConverter() int? currentPage,
+      @StringConverter() String? path,
+      @IntConverter() int? total,
+      @IntConverter() int? lastPage});
 }
 
 /// @nodoc
@@ -160,20 +165,29 @@ class __$$ApiMetaResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ApiMetaResponseImpl implements _ApiMetaResponse {
   const _$ApiMetaResponseImpl(
-      {this.perPage, this.currentPage, this.path, this.total, this.lastPage});
+      {@IntConverter() this.perPage,
+      @IntConverter() this.currentPage,
+      @StringConverter() this.path,
+      @IntConverter() this.total,
+      @IntConverter() this.lastPage});
 
   factory _$ApiMetaResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ApiMetaResponseImplFromJson(json);
 
   @override
+  @IntConverter()
   final int? perPage;
   @override
+  @IntConverter()
   final int? currentPage;
   @override
+  @StringConverter()
   final String? path;
   @override
+  @IntConverter()
   final int? total;
   @override
+  @IntConverter()
   final int? lastPage;
 
   @override
@@ -219,24 +233,29 @@ class _$ApiMetaResponseImpl implements _ApiMetaResponse {
 
 abstract class _ApiMetaResponse implements ApiMetaResponse {
   const factory _ApiMetaResponse(
-      {final int? perPage,
-      final int? currentPage,
-      final String? path,
-      final int? total,
-      final int? lastPage}) = _$ApiMetaResponseImpl;
+      {@IntConverter() final int? perPage,
+      @IntConverter() final int? currentPage,
+      @StringConverter() final String? path,
+      @IntConverter() final int? total,
+      @IntConverter() final int? lastPage}) = _$ApiMetaResponseImpl;
 
   factory _ApiMetaResponse.fromJson(Map<String, dynamic> json) =
       _$ApiMetaResponseImpl.fromJson;
 
   @override
+  @IntConverter()
   int? get perPage;
   @override
+  @IntConverter()
   int? get currentPage;
   @override
+  @StringConverter()
   String? get path;
   @override
+  @IntConverter()
   int? get total;
   @override
+  @IntConverter()
   int? get lastPage;
 
   /// Create a copy of ApiMetaResponse

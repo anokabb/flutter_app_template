@@ -45,3 +45,6 @@ app.*.map.json
 /android/app/release
 # Deployment related
 deployment/*
+
+# FVM Version Cache
+.fvm/

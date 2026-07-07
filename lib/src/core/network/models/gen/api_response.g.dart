@@ -11,7 +11,7 @@ _$ApiResponseImpl<T> _$$ApiResponseImplFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     _$ApiResponseImpl<T>(
-      message: json['message'] as String?,
+      message: const StringConverter().fromJson(json['message']),
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
       meta: json['meta'],
     );
@@ -21,7 +21,7 @@ Map<String, dynamic> _$$ApiResponseImplToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'message': instance.message,
+      'message': const StringConverter().toJson(instance.message),
       'data': _$nullableGenericToJson(instance.data, toJsonT),
       'meta': instance.meta,
     };

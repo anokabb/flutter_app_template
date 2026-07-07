@@ -9,19 +9,19 @@ part of '../api_meta_response.dart';
 _$ApiMetaResponseImpl _$$ApiMetaResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$ApiMetaResponseImpl(
-      perPage: (json['per_page'] as num?)?.toInt(),
-      currentPage: (json['current_page'] as num?)?.toInt(),
-      path: json['path'] as String?,
-      total: (json['total'] as num?)?.toInt(),
-      lastPage: (json['last_page'] as num?)?.toInt(),
+      perPage: const IntConverter().fromJson(json['per_page']),
+      currentPage: const IntConverter().fromJson(json['current_page']),
+      path: const StringConverter().fromJson(json['path']),
+      total: const IntConverter().fromJson(json['total']),
+      lastPage: const IntConverter().fromJson(json['last_page']),
     );
 
 Map<String, dynamic> _$$ApiMetaResponseImplToJson(
         _$ApiMetaResponseImpl instance) =>
     <String, dynamic>{
-      'per_page': instance.perPage,
-      'current_page': instance.currentPage,
-      'path': instance.path,
-      'total': instance.total,
-      'last_page': instance.lastPage,
+      'per_page': const IntConverter().toJson(instance.perPage),
+      'current_page': const IntConverter().toJson(instance.currentPage),
+      'path': const StringConverter().toJson(instance.path),
+      'total': const IntConverter().toJson(instance.total),
+      'last_page': const IntConverter().toJson(instance.lastPage),
     };
